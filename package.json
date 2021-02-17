@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "start:docs": "docsify serve docs",
+    "prebuild": "npm run clean:build",
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "clean": "npm run clean:build && lerna clean",
+    "clean:build": "lerna exec -- rimraf dist LICENSE",
+    "lint": "eslint --fix --ignore-path .gitignore --ignore-path .eslintignore --ext .js .",
+    "version": "lerna version --no-push --force-publish",
+    "publish": "lerna exec -- npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint --",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "concurrently": "^4.1.0",
+    "docsify-cli": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "husky": "^2.3.0",
+    "lerna": "^3.14.1",
+    "lint-staged": "^8.1.7",
+    "rimraf": "^2.7.1",
+    "rollup": "^1.12.4",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-copy": "^2.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^5.0.0",
+    "rollup-plugin-vue": "^5.0.0",
+    "storybook-addon-styles": "^1.1.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

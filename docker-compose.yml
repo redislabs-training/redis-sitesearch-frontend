@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    container_name: 'redis-sitesearch-frontend'
+    build: .
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - '3000:3000' # docs
+      - '35729:35729' # docsify
+    stdin_open: true
+    tty: true
