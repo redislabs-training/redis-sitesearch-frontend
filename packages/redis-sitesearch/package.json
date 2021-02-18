@@ -1,5 +1,5 @@
 {
-  "name": "@abrookins/redis-sitesearch-frontend",
+  "name": "@abrookins-redis/redis-sitesearch-frontend",
   "version": "1.0.0",
   "description": "redis-sitesearch frontend component in vanilla JS",
   "main": "dist/redis-sitesearch.cjs.js",
