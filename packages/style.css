@@ -78,11 +78,16 @@
 /* Single result item */
 .redis-sitesearch-result {
   cursor: default;
-  padding: 12px 12px 12px 48px;
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjY2NjIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iOCIvPjxwYXRoIGQ9Ik0yMSAyMWwtNC00Ii8+PC9zdmc+');
   background-repeat: no-repeat;
   background-position: 12px center;
   width: 100%;
+
+  padding: 11px 2.1em 11px 11px;
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .redis-sitesearch-result:hover,
@@ -125,16 +130,7 @@
   padding: 6px 6px 6px 48px;
 }
 
-.redis-sitesearch-result {
-  padding: 11px;
-  background: transparent;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.redis-sitesearch-result-list li:last-child {
+.redis-sitesearch-result-list li:last-of-type {
   padding-bottom: 80px !important; /* height of powered-by-redisearch section */
 }
 
