@@ -1,6 +1,6 @@
 {
   "name": "@abrookins-redis/redis-sitesearch-frontend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redis-sitesearch frontend component in vanilla JS",
   "main": "dist/redis-sitesearch.cjs.js",
   "module": "dist/redis-sitesearch.esm.js",
