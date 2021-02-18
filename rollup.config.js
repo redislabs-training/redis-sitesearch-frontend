@@ -44,7 +44,7 @@ const createConfig = async ({ root, plugins = [] }) => {
     {
       input: `${root}/index.js`,
       output: {
-        name: 'RedisLabsAutocomplete',
+        name: 'RedisSiteSearch',
         file: `${root}/${pkg.unpkg}`,
         format: 'iife',
       },
@@ -63,7 +63,7 @@ const createConfig = async ({ root, plugins = [] }) => {
     {
       input: `${root}/index.js`,
       output: {
-        name: 'RedisLabsAutocomplete',
+        name: 'RedisSiteSearch',
         file: `${pkg.demo}`,
         format: 'iife',
       },
@@ -72,7 +72,7 @@ const createConfig = async ({ root, plugins = [] }) => {
           exclude: 'node_modules/**',
         }),
         postcss({
-          extract: `demo/css/autocomplete.css`,
+          extract: `demo/css/redis-sitesearch.css`,
           minimize: true,
         }),
         ...plugins,
@@ -83,11 +83,10 @@ const createConfig = async ({ root, plugins = [] }) => {
 }
 
 const config = async () => {
-  const [autocompleteConfig] = await Promise.all([
-    createConfig({ root: 'packages/autocomplete' })
+  const [redisSiteSearchConfig] = await Promise.all([
+    createConfig({ root: 'packages/redis-sitesearch' })
   ])
 
-  return Promise.resolve([...autocompleteConfig])
+  return Promise.resolve([...redisSiteSearchConfig])
 }
-
 export default config

@@ -34,7 +34,7 @@ jobs:
         with:
           name: packages
       - name: Publish redis-sitesearch-frontend
-        working-directory: ./packages/autocomplete
+        working-directory: ./packages/redis-sitesearch
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

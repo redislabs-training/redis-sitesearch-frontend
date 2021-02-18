@@ -1,9 +1,7 @@
-import AutocompleteCore from '../autocomplete/AutocompleteCore.js'
-import uniqueId from '../autocomplete/util/uniqueId.js'
-import getRelativePosition from '../autocomplete/util/getRelativePosition.js'
-import debounce from '../autocomplete/util/debounce.js'
-
-console.log("hey")
+import AutocompleteCore from './AutocompleteCore.js'
+import uniqueId from './util/uniqueId.js'
+import getRelativePosition from './util/getRelativePosition.js'
+import debounce from './util/debounce.js'
 
 // Creates a props object with overridden toString function. toString returns an attributes
 // string in the format: `key1="value1" key2="value2"` for easy use in an HTML string.
@@ -27,7 +25,7 @@ class Props {
   }
 }
 
-class RedisLabsAutocomplete {
+class RedisSiteSearch {
   expanded = false
   loading = false
   position = {}
@@ -39,7 +37,7 @@ class RedisLabsAutocomplete {
       search,
       onSubmit = () => {},
       onUpdate = () => {},
-      baseClass = 'autocomplete',
+      baseClass = 'redis-sitesearch',
       autoSelect,
       getResultValue = result => result,
       renderResult,
@@ -74,7 +72,7 @@ class RedisLabsAutocomplete {
     this.core = core
 
     this.resultContainer = this.root.querySelector(
-      '.autocomplete-result-list-wrapper'
+      '.redis-sitesearch-result-list-wrapper'
     )
     this.resultContainer.style.position = 'absolute'
     this.resultContainer.style['z-index'] = '1'
@@ -94,11 +92,11 @@ class RedisLabsAutocomplete {
     this.root.style.position = 'relative'
 
     this.input.setAttribute('role', 'combobox')
-    this.input.setAttribute('autocomplete', 'off')
+    this.input.setAttribute('redis-sitesearch', 'off')
     this.input.setAttribute('autocapitalize', 'off')
     this.input.setAttribute('autocorrect', 'off')
     this.input.setAttribute('spellcheck', 'false')
-    this.input.setAttribute('aria-autocomplete', 'list')
+    this.input.setAttribute('aria-redis-sitesearch', 'list')
     this.input.setAttribute('aria-haspopup', 'listbox')
     this.input.setAttribute('aria-expanded', 'false')
 
@@ -356,4 +354,4 @@ class RedisLabsAutocomplete {
   }
 }
 
-export default RedisLabsAutocomplete
+export default RedisSiteSearch

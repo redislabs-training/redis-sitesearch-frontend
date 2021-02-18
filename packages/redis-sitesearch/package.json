@@ -1,0 +1,27 @@
+{
+  "name": "@abrookins/redis-sitesearch-frontend",
+  "version": "1.0.0",
+  "description": "redis-sitesearch frontend component in vanilla JS",
+  "main": "dist/redis-sitesearch.cjs.js",
+  "module": "dist/redis-sitesearch.esm.js",
+  "unpkg": "dist/redis-sitesearch.min.js",
+  "demo": "demo/js/redis-sitesearch.min.js",
+  "keywords": [
+    "combobox",
+    "typeahead",
+    "select",
+    "search",
+    "accessibility",
+    "a11y",
+    "WAI-ARIA",
+    "vanilla js"
+  ],
+  "author": "Andrew Brookins <andrew.brookins@redislabs.com> (https://redislabs.com)",
+  "license": "MIT",
+  "repository": "redislabs-training/redis-sitesearch-frontend",
+  "bugs": "https://github.com/redislabs-training/redis-sitesearch-frontend/issues",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
