@@ -1,5 +1,6 @@
 (function() {
   const SEARCH_API_URL = 'http://localhost:8080/search'
+  // const SEARCH_SITE = 'https://docs.redislabs.com/latest/'
   const SEARCH_SITE = 'https://developer.redislabs.com'
   const THIRTY_SECONDS = 30000
   const SEARCH_LOGO =
@@ -77,13 +78,15 @@
       }
 
       return new Promise(resolve => {
-        $.getJSON(url)
-          .fail(function(jqxhr, textStatus, error) {
-            const err = `${textStatus}, ${error}`
+        fetch(url)
+          .catch(function(err) {
             console.error('Error querying search API:', err)
             resolve([])
           })
-          .done(function(data) {
+          .then(function(response) {
+            return response.json()
+          })
+          .then(function(data) {
             // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
               const safeInput = escapeHtml(trimmedInput)

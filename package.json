@@ -9,7 +9,8 @@
     "clean:build": "lerna exec -- rimraf dist LICENSE",
     "lint": "eslint --fix --ignore-path .gitignore --ignore-path .eslintignore --ext .js .",
     "version": "lerna version --no-push --force-publish",
-    "publish": "lerna exec -- npm publish"
+    "publish": "lerna exec -- npm publish",
+    "demo": "cd demo; python -m SimpleHTTPServer"
   },
   "husky": {
     "hooks": {
