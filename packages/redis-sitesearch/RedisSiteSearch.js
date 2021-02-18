@@ -42,6 +42,7 @@ class RedisSiteSearch {
       getResultValue = result => result,
       renderResult,
       debounceTime = 0,
+      zIndex = '1'
     } = {}
   ) {
     this.root = typeof root === 'string' ? document.querySelector(root) : root
@@ -50,6 +51,7 @@ class RedisSiteSearch {
     this.baseClass = baseClass
     this.getResultValue = getResultValue
     this.onUpdate = onUpdate
+    this.zIndex = zIndex
     if (typeof renderResult === 'function') {
       this.renderResult = renderResult
     }
@@ -103,7 +105,7 @@ class RedisSiteSearch {
     this.resultList.setAttribute('role', 'listbox')
 
     this.resultContainer.style.position = 'absolute'
-    this.resultContainer.style.zIndex = '1'
+    this.resultContainer.style.zIndex = this.zIndex
     this.resultContainer.style.width = '100%'
     this.resultContainer.style.boxSizing = 'border-box'
 
