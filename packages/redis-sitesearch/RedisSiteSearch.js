@@ -42,7 +42,8 @@ class RedisSiteSearch {
       getResultValue = result => result,
       renderResult,
       debounceTime = 0,
-      zIndex = '1'
+      zIndex = '1',
+      defaultSection = '',
     } = {}
   ) {
     this.root = typeof root === 'string' ? document.querySelector(root) : root
@@ -52,6 +53,7 @@ class RedisSiteSearch {
     this.getResultValue = getResultValue
     this.onUpdate = onUpdate
     this.zIndex = zIndex
+    this.defaultSection = defaultSection
     if (typeof renderResult === 'function') {
       this.renderResult = renderResult
     }
@@ -219,7 +221,10 @@ class RedisSiteSearch {
     // maintain a "topLevelOrder" array to hold that order.
     //
     results.forEach(result => {
-      let rootName = result.hierarchy[0],
+      let rootName =
+          result.hierarchy.length > 1
+            ? result.hierarchy[0]
+            : this.defaultSection,
         secondLevelName =
           result.hierarchy.length > 1
             ? result.hierarchy[1]

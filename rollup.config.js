@@ -84,7 +84,7 @@ const createConfig = async ({ root, plugins = [] }) => {
 
 const config = async () => {
   const [redisSiteSearchConfig] = await Promise.all([
-    createConfig({ root: 'packages/redis-sitesearch' })
+    createConfig({ root: 'packages/redis-sitesearch' }),
   ])
 
   return Promise.resolve([...redisSiteSearchConfig])
