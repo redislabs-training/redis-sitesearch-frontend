@@ -1,7 +1,6 @@
 (function() {
   const SEARCH_API_URL = 'http://localhost:8080/search'
-  // const SEARCH_SITE = 'https://docs.redislabs.com/latest/'
-  const SEARCH_SITE = 'https://andrewbrookins.com'
+  const SEARCH_SITE = 'https://docs.redislabs.com/latest/'
   const THIRTY_SECONDS = 30000
   const SEARCH_LOGO =
     '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
